@@ -15,6 +15,8 @@ let tasks = [];
 const taskForm = document.getElementById("taskForm")
 const taskTable = document.getElementById("taskTable") 
 
+console.log(taskForm)
+
 // Function to handle form submissions
 function handleSubmission(event) {
     event.preventDefault();
@@ -23,7 +25,7 @@ function handleSubmission(event) {
     const taskDesc = document.getElementById("taskDescription").value
     const taskDeadline = document.getElementById("taskDeadline").value
     // TODO: Validate input fields
-    if (taskName === "" || taskDeadline === ""){
+    if (String(taskName) === "" || String(taskDeadline) === ""){
         alert('Task name and deadline are required')
     }
     // TODO: Update the tasks array
@@ -33,7 +35,8 @@ function handleSubmission(event) {
 
     // Function to render tasks in the table
     function render() {
-        // TODO: Use array methods to create a new table row of data for each item in the arr
+     // TODO: Use array methods to create a new table row of data for each item in the arr
+     taskTable.innerHTML = tasks.map
     }
     // Function to initialize the table
     function init() {
